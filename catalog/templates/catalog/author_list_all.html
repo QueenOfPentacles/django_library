@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Author Maintenance</h1>
+
+    {% if author_list %}
+    <ul>
+
+      {% for author in author_list %}
+      <li>
+        <a href="{{ author.get_absolute_url }}">{{ author }}</a> <a href="{% url 'author-update' %}">Update</a>   <a href="{% url 'author-delete' %}">Delete</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    
+    {% endif %}       
+{% endblock %}
